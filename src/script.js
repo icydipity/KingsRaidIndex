@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroSkills = document.querySelector('.placeholder__skills');
         const heroTranscend = document.querySelector('.placeholder__transcend');
         const heroWeapon = document.querySelector('.unique-weapon');
-        const heroTreasure = document.querySelector('.treasure');
-        const heroTreasure2 = document.querySelector('.treasure-2');
+        const heroTreasureS2 = document.querySelector('.treasure-s2');
+        const heroTreasureS3 = document.querySelector('.treasure-s3');
         const skillDetail = document.querySelector('.skill-detail');
         const mainHeroInfo = document.querySelector('.main-info');
         const menuItemProfile = document.querySelector('.menu-item-profile');
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //menuTypeArr contains all the options which available from hero-menu
         const menuTypeArr = ['Profile', 'Common', 'Skills', 'Transcend',
-            'Weapon', 'Treasure', 'Treasure-2'];
+            'UW', 'UT S2', 'UT S3'];
 
         //Default unique star for unique items
         let uniqueStar = 0;
@@ -292,9 +292,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'Common': loadHeroCommon(krHero.name, krHero.class); break;
                 case 'Skills': loadHeroSkills(krHero.name, krHero.hasLinkedSkill); break;
                 case 'Transcend': loadHeroTranscend(krHero.name, krHero.class); break;
-                case 'Weapon': loadHeroWeapon(krHero.name); break;
-                case 'Treasure': loadHeroTreasure(krHero.name); break;
-                case 'Treasure-2': loadHeroTreasure2(krHero.name); break;
+                case 'UW': loadHeroWeapon(krHero.name); break;
+                case 'UT-S2': loadHeroTreasureS2(krHero.name); break;
+                case 'UT-S3': loadHeroTreasureS3(krHero.name); break;
                 default: loadHeroCommon(krHero.name, krHero.class);
             }
         }
@@ -306,8 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
             heroSkills.classList.add('hidden');
             heroTranscend.classList.add('hidden');
             heroWeapon.classList.add('hidden');
-            heroTreasure.classList.add('hidden');
-            heroTreasure2.classList.add('hidden');
+            heroTreasureS3.classList.add('hidden');
+            heroTreasureS2.classList.add('hidden');
         }
 
         //Hero Profile
@@ -770,48 +770,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 changeHeroWeapon();
                 heroWeapon.setAttribute('data-hero-name', heroName);
             }
-            handleUniqueStarChange('weapon', uniqueStar);
+            handleUniqueStarChange('uw', uniqueStar);
             heroWeapon.classList.remove('hidden');
         }
 
         function changeHeroWeapon() {
-            heroWeapon.innerHTML = getUniqueItemHTML('weapon');
-            addEventForUniqueItem('weapon');
+            heroWeapon.innerHTML = getUniqueItemHTML('uw');
+            addEventForUniqueItem('uw');
         }
 
         //Hero Treasure
-        function loadHeroTreasure(heroName) {
+        function loadHeroTreasureS2(heroName) {
             uniqueStar = 0;
-            if (heroTreasure.getAttribute('data-hero-name') !== heroName) {
-                changeHeroTreasure('treasure');
-                heroTreasure.setAttribute('data-hero-name', heroName);
+            if (heroTreasureS2.getAttribute('data-hero-name') !== heroName) {
+                changeHeroTreasure('ut-s2');
+                heroTreasureS2.setAttribute('data-hero-name', heroName);
             }
-            handleUniqueStarChange('treasure', uniqueStar);
-            heroTreasure.classList.remove('hidden');
+            handleUniqueStarChange('ut-s2', uniqueStar);
+            heroTreasureS2.classList.remove('hidden');
         }
 
-        function loadHeroTreasure2(heroName) {
+        function loadHeroTreasureS3(heroName) {
             uniqueStar = 0;
-            if (heroTreasure2.getAttribute('data-hero-name') !== heroName) {
-                changeHeroTreasure('treasure-2');
-                heroTreasure2.setAttribute('data-hero-name', heroName);
+            if (heroTreasureS3.getAttribute('data-hero-name') !== heroName) {
+                changeHeroTreasure('ut-s3');
+                heroTreasureS3.setAttribute('data-hero-name', heroName);
             }
-            handleUniqueStarChange('treasure-2', uniqueStar);
-            heroTreasure2.classList.remove('hidden');
+            handleUniqueStarChange('ut-s3', uniqueStar);
+            heroTreasureS3.classList.remove('hidden');
         }
 
         function changeHeroTreasure(treasure) {
-            if (treasure === 'treasure') {
-                heroTreasure.innerHTML = getUniqueItemHTML(treasure);
+            if (treasure === 'ut-s2') {
+                heroTreasureS2.innerHTML = getUniqueItemHTML(treasure);
             } else {
-                heroTreasure2.innerHTML = getUniqueItemHTML(treasure);
+                heroTreasureS3.innerHTML = getUniqueItemHTML(treasure);
             }
             addEventForUniqueItem(treasure);
         }
 
         function getUniqueItemHTML(itemType) {
-            const statType = (itemType === 'weapon') ? 'ATK' : 'HP';
-            const itemStat = (itemType === 'weapon') ?
+            const statType = (itemType === 'uw') ? 'ATK' : 'HP';
+            const itemStat = (itemType === 'uw') ?
                 uniqueStatsData.weaponAtk[krHero.class][0] :
                 uniqueStatsData.treasureHp[0];
             const responseHTML = `
@@ -824,7 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="${itemType}__img unique-item__basic-info--left-col col-4">
                         <img class="unique-item__img"
                             src="images/heroes/${krHero.name}/${itemType}.png"
-                            alt="Unique ${itemType}">
+                            alt="${itemType}">
                     </div>
                     <div class="unique-item__basic-info--right-col col-8">
                         <div class="unique-item__text row">
@@ -895,7 +895,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function handleUniqueStarChange(itemType, uniqueStar) {
             const itemStat = document.querySelector(`.${itemType}__stat`);
             const itemDescription = document.querySelector(`.${itemType}__description`);
-            if (itemType === 'weapon') {
+            if (itemType === 'uw') {
                 itemStat.innerHTML = uniqueStatsData.weaponAtk[krHero.class][uniqueStar];
                 itemDescription.innerHTML = krHero[itemType].description[uniqueStar];
             } else {
