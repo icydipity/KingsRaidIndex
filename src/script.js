@@ -853,18 +853,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${krHero[itemType].introduction}
                 </div>
                 <div class="unique-item__img-button-wrapper row">
-                    <img class="${itemType}__unique-option unique-item__img-button
-                        unique-item__img-button--padding-right col-6 hidden"
-                        src="images/icons/Unique-Option.png" alt="">
-                    <img class="${itemType}__unique-option-actived unique-item__img-button
-                        unique-item__img-button--padding-right col-6"
-                        src="images/icons/Unique-Option-Actived.png" alt="">
-                    <img class="${itemType}__item-introduction unique-item__img-button
-                        unique-item__img-button--padding-left col-6"
-                        src="images/icons/Item-Introduction.png" alt="">
-                    <img class="${itemType}__item-introduction-actived unique-item__img-button
-                        unique-item__img-button--padding-left col-6 hidden"
-                        src="images/icons/Item-Introduction-Actived.png" alt="">
+                    <div class="col-6 unique-item__img-button-wrapper--padding-left">
+                        <img class="${itemType}__unique-option unique-item__img-button hidden"
+                            src="images/icons/Unique-Option.png" alt="">
+                        <img class="${itemType}__unique-option-actived unique-item__img-button"
+                            src="images/icons/Unique-Option-Actived.png" alt="">
+                    </div>
+                    <div class="col-6 unique-item__img-button-wrapper--padding-right">
+                        <img class="${itemType}__item-introduction unique-item__img-button"
+                            src="images/icons/Item-Introduction.png" alt="">
+                        <img class="${itemType}__item-introduction-actived unique-item__img-button hidden"
+                            src="images/icons/Item-Introduction-Actived.png" alt="">
+                    </div>
                 </div>
             `;
             return responseHTML;
