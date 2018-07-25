@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>King's Raid Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Icy">
+    <meta name="description" content="A quick Hero Index viewer for King's Raid">
+    <meta name="keywords" content="King,King's,Kings,Raid,Hero,Index,Codex">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preload" as="script" href="src/script.js">
+</head>
+
+<body>
+    <noscript>Please turn on Javascript to use this page.</noscript>
+
+    <div class="app no-fouc hidden">
+        <nav class="main-navbar navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="/">
+                <img class="main-navbar__logo" src="images/icons/Logo.png" alt="Logo">
+            </a>
+        </nav>
+
+        <div class="container">
+            <div class="kr-classes">
+                <ul class="classes-list kr-classes__list list-inline">
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--All classes-list__icon--selected" data-class-type="All"></i>
+                    </li>
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--Knight" data-class-type="Knight"></i>
+                    </li>
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--Warrior" data-class-type="Warrior"></i>
+                    </li>
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--Assassin" data-class-type="Assassin"></i>
+                    </li>
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--Archer" data-class-type="Archer"></i>
+                    </li>
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--Mechanic" data-class-type="Mechanic"></i>
+                    </li>
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--Wizard" data-class-type="Wizard"></i>
+                    </li>
+                    <li class="classes-list__item list-inline-item">
+                        <i class="classes-list__icon kr-classes__icon kr-classes__icon--Priest" data-class-type="Priest"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="kr-heroes">
+                <ul class="heroes-list kr-heroes__list list-inline">
+                </ul>
+            </div>
+
+            <nav class="hero-menu navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+                <span class="hero-menu__brand navbar-brand"></span>
+
+                <button name="btnMenuToggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-navbar-hero">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="collapsible-navbar-hero">
+                    <ul class="nav navbar-nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <span class="menu-item-profile hero-menu__item nav-link disabled" data-toggle="pill">Profile</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="hero-menu__item nav-link active" data-toggle="pill">Common</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="hero-menu__item nav-link" data-toggle="pill">Skills</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="hero-menu__item nav-link" data-toggle="pill">Transcend</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="hero-menu__item nav-link" data-toggle="pill">Weapon</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="hero-menu__item nav-link" data-toggle="pill">Treasure</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="hero-menu__item nav-link" data-toggle="pill">Treasure 2</span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="hero-info row">
+                <div class="left-content hero-info__col hero-info__col--margin-bottom col-sm-7">
+                    <img class="hero-info--overlay hero-info--overlay-padding-right" src="images/icons/LeftOverlay.png" alt="">
+                    <div class="left-content__container" data-hero-name=""></div>
+                </div>
+                <div class="right-content hero-info__col col-sm-5">
+                    <img class="hero-info--overlay" src="images/icons/RightOverlay.png" alt="">
+                    <div class="main-info right-content__container">
+                        <div class="placeholder main-info__placeholder">
+                            <div class="placeholder__profile placeholder--overflow-y-auto hidden" data-hero-name=""></div>
+                            <div class="placeholder__common placeholder--overflow-y-auto" data-hero-name=""></div>
+                            <div class="skills placeholder__skills hidden" data-hero-name=""></div>
+                            <div class="transcend placeholder__transcend hidden" data-hero-name=""></div>
+                        </div>
+                        <div class="unique-weapon unique-item main-info__unique-placeholder hidden" data-hero-name=""></div>
+                        <div class="treasure unique-item main-info__unique-placeholder hidden" data-hero-name=""></div>
+                        <div class="treasure-2 unique-item main-info__unique-placeholder hidden" data-hero-name=""></div>
+                    </div>
+                    <div class="skill-detail right-content__container hidden"></div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="text-center">
+                <a href="https://github.com/IcyDipity/KingsRaidIndex" rel="noopener" target="_blank">
+                    <i class="fab fa-github fa-3x text-white"></i>
+                </a>
+                <p class="footer__text text-white">Made by Icy</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelector('.app').classList.remove('hidden');
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="src/lazysizes.min.js"></script>
+    <script src="src/script.js"></script>
+</body>
+
+</html>
