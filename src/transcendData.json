@@ -2662,5 +2662,131 @@
             "name": "Loman [DARK]",
             "description": "Increases ATK and M.DEF of all allies by 3% of Loman's M.DEF."
         }
+    },
+    "Lilia": {
+        "perk1": {
+            "name": "Aqua Tempest [LIGHT]",
+            "description": "Hit target's ATK Spd is decreased by 250 for 10 sec."
+        },
+        "perk2": {
+            "name": "Aqua Tempest [DARK]",
+            "description": "Each use increases DMG by 20%. Stacks 15 times max."
+        },
+        "perk3": {
+            "name": "Everlasting Oasis [LIGHT]",
+            "description": "Mana cost is increased by 1 and is additionally activated on the ally with the highest ATK excluding self."
+        },
+        "perk4": {
+            "name": "Everlasting Oasis [DARK]",
+            "description": "Skill duration is decreased by 5 sec and all effects are increased by 100%."
+        },
+        "perk5": {
+            "name": "Celestial Cataract [LIGHT]",
+            "description": "While in use, gain immunity to CC."
+        },
+        "perk6": {
+            "name": "Celestial Cataract [DARK]",
+            "description": "Per each water drop thrown, mana cost and mana consumption rate are increased by 100%, and per each water drop thrown, there is a 50% chance of throwing an extra water drop."
+        },
+        "perk7": {
+            "name": "Aqua Purification [LIGHT]",
+            "description": "At the start of each battle, recovers 1000 mana."
+        },
+        "perk8": {
+            "name": "Aqua Purification [DARK]",
+            "description": "Deals 15% increased DMG to Boss monsters."
+        },
+        "perk9": {
+            "name": "Lilia [LIGHT]",
+            "description": "ATK, DEF, HP+15% / Crit DMG +20%"
+        },
+        "perk10": {
+            "name": "Lilia [DARK]",
+            "description": "ATK is increased by 15% per 1 orb of mana."
+        }
+    },
+    "Laudia": {
+        "perk1": {
+            "name": "Whisper of Sand [LIGHT]",
+            "description": "Mana cost is reduced by 1."
+        },
+        "perk2": {
+            "name": "Whisper of Sand [DARK]",
+            "description": "Target takes 25% increased M.DMG for 10 sec."
+        },
+        "perk3": {
+            "name": "Enchanting Flow [LIGHT]",
+            "description": "Gains 2 orbs of mana after movement. Gained Mana is consumed over 5 sec."
+        },
+        "perk4": {
+            "name": "Enchanting Flow [DARK]",
+            "description": "After using [Enchanting Flow], [Alluring Ambush] can be used twice within 10 sec."
+        },
+        "perk5": {
+            "name": "Dance of the Desert [LIGHT]",
+            "description": "Mana cost of [Blinding Acceleration] is decreased by 1 and skill duration is increased by 2 sec."
+        },
+        "perk6": {
+            "name": "Dance of the Desert [DARK]",
+            "description": "Mana cost is increased by 1 and DMG is increased by 100%."
+        },
+        "perk7": {
+            "name": "Blessing of Oasis [LIGHT]",
+            "description": "Gains 2 stack of [Blessing of Oasis]."
+        },
+        "perk8": {
+            "name": "Blessing of Oasis [DARK]",
+            "description": "Per each stack, takes 2% less DMG from enemies other than heroes"
+        },
+        "perk9": {
+            "name": "Laudia [LIGHT]",
+            "description": "ATK, DEF, HP+15% / ATK.Spd +100"
+        },
+        "perk10": {
+            "name": "Laudia [DARK]",
+            "description": "At the start of each battle, gains immunity to CC for 5 sec, and ACC, CC ACC are increased by 300 for 10 sec."
+        }
+    },
+    "Zafir": {
+        "perk1": {
+            "name": "Judgment of the Desert [LIGHT]",
+            "description": "Crit DMG boost per use changes to 10%."
+        },
+        "perk2": {
+            "name": "Judgment of the Desert [DARK]",
+            "description": "Hit enemy is inflicted by Blind for 1 sec."
+        },
+        "perk3": {
+            "name": "Blessing of the Sand Spirit [LIGHT]",
+            "description": "Skill cooldown is decreased by 5 sec."
+        },
+        "perk4": {
+            "name": "Blessing of the Sand Spirit [DARK]",
+            "description": "Enemies hit by 'Sand Storm' are knocked back far away and are knocked down for 3 sec."
+        },
+        "perk5": {
+            "name": "Doom of the Desert [LIGHT]",
+            "description": "Mana cost is decreased by 1."
+        },
+        "perk6": {
+            "name": "Doom of the Desert [DARK]",
+            "description": "Duration of 'Sand Storm' is increased by 2 sec."
+        },
+        "perk7": {
+            "name": "Calling of the Guardian [LIGHT]",
+            "description": "When there are over 5 enemies, all enemies are inflicted with 5 stacks of 'Mark of Desert'. This effect is activated once every 20 sec."
+        },
+        "perk8": {
+            "name": "Calling of the Guardian [DARK]",
+            "description": "Activation chance changes to 30%."
+        },
+        "perk9": {
+            "name": "Zafir [LIGHT]",
+            "description": "ATK, DEF, HP+15% / Crit Chance +100"
+        },
+        "perk10": {
+            "name": "Zafir [DARK]",
+            "description": "Recovers 500 mana upon using a skill. If there are over 5 enemies, mana recovery rate is doubled and ATK Spd is increased by 500 for 5 sec. This effect cannot be stacked."
+        }
     }
 }
