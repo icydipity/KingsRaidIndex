@@ -135,6 +135,10 @@
 .hero-info {
     margin: 0;
     padding-bottom: 2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .hero-info__col {
@@ -242,8 +246,9 @@
     cursor: pointer;
 }
 
-.skill-detail__img-close-btn {
+.skill-detail__close-btn {
     position: absolute;
+    padding-bottom: 10%;
     width: 10%;
     right: 2.7%;
     top: 0.5%;
@@ -259,6 +264,7 @@
     bottom: 8%;
     right: 0.5%;
     width: 12.5%;
+    padding-top: 12.5%;
     cursor: pointer;
 }
 
@@ -383,6 +389,7 @@
 .skill-detail__skill-swap {
     cursor: pointer;
     position: absolute;
+    padding-bottom: 10%;
     top: 0.3%;
     left: 1.5%;
     width: 10%;

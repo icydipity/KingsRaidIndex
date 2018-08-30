@@ -1,5 +1,52 @@
 [
     {
+        "name": "Juno",
+        "class": "Priest",
+        "hasProfile": false,
+        "linkedSkills": [
+            "s1",
+            "s1_2",
+            "s2",
+            "s2_2"
+        ],
+        "uw": {
+            "name": "Hundred-Flavor Banquet, Tempora Fyrr",
+            "descriptions": [
+                "Every 10 sec, gains 1 stack of [Excellent Ingredient] and recovers 1 orb of Mana.",
+                "Every 9 sec, gains 1 stack of [Excellent Ingredient] and recovers 1 orb of Mana.",
+                "Every 8 sec, gains 1 stack of [Excellent Ingredient] and recovers 1 orb of Mana.",
+                "Every 7 sec, gains 1 stack of [Excellent Ingredient] and recovers 1 orb of Mana.",
+                "Every 6 sec, gains 1 stack of [Excellent Ingredient] and recovers 1 orb of Mana.",
+                "Every 5 sec, gains 1 stack of [Excellent Ingredient] and recovers 1 orb of Mana."
+            ],
+            "introduction": "A magical pot known to have been used by a legendary chef in the distant past. It is made with magical metal that even Blacksmith Jin hasn't ever seen before. It has the effects of boosting the taste and aroma of the food, maximizing the natural quality of ingredients. It is such a rare treasure, but it is seldom used by its owner, Juno. As she has great pride in her culinary skills, people assume that she does not like to rely upon such magical artifacts. As a result, the most precious treasure in the culinary world is now merely a decoration in Juno's inn. When the day comes that she decides to use it, however, the world will witness a whole new level of cooking."
+        },
+        "ut-s2": {
+            "name": "The Jar of Happiness",
+            "descriptions": [
+                "[Power-up] Increases Mana Recovery Rate by 50% and reduces Cooldown of the target's active skills by 12%.<br><br>[Help Yourself, Then Get Lost!] Increases Mana Reduction by 50% and stuns the target for 1 second.",
+                "[Power-up] Increases Mana Recovery Rate by 50% and reduces Cooldown of the target's active skills by 14%.<br><br>[Help Yourself, Then Get Lost!] Increases Mana Reduction by 50% and stuns the target for 1.2 second.",
+                "[Power-up] Increases Mana Recovery Rate by 50% and reduces Cooldown of the target's active skills by 17%.<br><br>[Help Yourself, Then Get Lost!] Increases Mana Reduction by 50% and stuns the target for 1.4 second.",
+                "[Power-up] Increases Mana Recovery Rate by 50% and reduces Cooldown of the target's active skills by 21%.<br><br>[Help Yourself, Then Get Lost!] Increases Mana Reduction by 50% and stuns the target for 1.7 second.",
+                "[Power-up] Increases Mana Recovery Rate by 50% and reduces Cooldown of the target's active skills by 25%.<br><br>[Help Yourself, Then Get Lost!] Increases Mana Reduction by 50% and stuns the target for 2.1 second.",
+                "[Power-up] Increases Mana Recovery Rate by 50% and reduces Cooldown of the target's active skills by 30%.<br><br>[Help Yourself, Then Get Lost!] Increases Mana Reduction by 50% and stuns the target for 2.5 second."
+            ],
+            "introduction": "A jar that juno in her naive days bought at a rip-off price from a suspicious merchant. The merchant told her that the jar was able to turn plain water into magical broth. He managed to demonstrate the process with his nimble hands, and successfully made her fall for it. What he didn't know, however, was that the jar would actually become a true Jar of Happiness through Juno's amazing culinary skills. With greatly improved Juno's culinary skills and the addition of Juno's Special Seasoning, an improved version of the magical broth powder that the merchant used, the jar is now one of the most important kitchen tools in Juno's inn, producing top-notch dishes."
+        },
+        "ut-s3": {
+            "name": "Suspicious Seasoning Set",
+            "descriptions": [
+                "[Cook from Hell] Applies healing effects to all allies and reduces Cooldown of Cook from Hell by 1 second.",
+                "[Cook from Hell] Applies healing effects to all allies and reduces Cooldown of Cook from Hell by 1.2 second.",
+                "[Cook from Hell] Applies healing effects to all allies and reduces Cooldown of Cook from Hell by 1.4 second.",
+                "[Cook from Hell] Applies healing effects to all allies and reduces Cooldown of Cook from Hell by 1.7 second.",
+                "[Cook from Hell] Applies healing effects to all allies and reduces Cooldown of Cook from Hell by 2.1 second.",
+                "[Cook from Hell] Applies healing effects to all allies and reduces Cooldown of Cook from Hell by 2.5 second."
+            ],
+            "introduction": "-Here is your order, Juno's special! <br>No one takes the banner in front of her inn that says 'Excellent Taste! Quality Guaranteed!' seriously until they put the food in their mouths. There are very few words that do Juno's food justice. When she was asked what her secret was, she smiled and answered. <br>- It's Juno's special seasoning!"
+        }
+    },
+    {
         "name": "Zafir",
         "class": "Archer",
         "hasProfile": false,
@@ -263,12 +310,12 @@
         "uw": {
             "name": "Wave of Protection, Gaiamenes",
             "descriptions": [
-                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 200% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 25% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 10% for 10 seconds. While 'Blessing of Orvelia' lasts, 'Pride of Orvelia' does not stack.",
-                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 240% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 30% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 12% for 10 seconds. While 'Blessing of Orvelia' lasts, 'Pride of Orvelia' does not stack.",
-                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 290% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 36% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 14% for 10 seconds. While 'Blessing of Orvelia' lasts, 'Pride of Orvelia' does not stack.",
-                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 350% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 43% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 17% for 10 seconds. While 'Blessing of Orvelia' lasts, 'Pride of Orvelia' does not stack.",
-                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 420% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 51% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 21% for 10 seconds. While 'Blessing of Orvelia' lasts, 'Pride of Orvelia' does not stack.",
-                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 500% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 60% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 25% for 10 seconds. While 'Blessing of Orvelia' lasts, 'Pride of Orvelia' does not stack."
+                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 200% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 25% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 10% for 10 seconds.",
+                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 240% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 30% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 12% for 10 seconds.",
+                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 290% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 36% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 14% for 10 seconds.",
+                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 350% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 43% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 17% for 10 seconds.",
+                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 420% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 51% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 21% for 10 seconds.",
+                "Pride of Orvelia' is stacked on every use of skills. 'Pride of Orvelia' cannot be dispelled, and when stacked 3 times, 'Blessing of Orvelia' is activated, dealing 500% of ATK as P.DMG to enemies within a wide range and increasing P.Weakness of the targets by 60% for 20 seconds. 'Blessing of Orvelia' also increases M.DEF by 25% for 10 seconds."
             ],
             "introduction": "The halberd held by an ancient guardian statue defending the gate of the labyrinth that was recently discovered at the Royal Underground. The old, eroded statue was holding the halberd firmly in its hands, as if showing its determination to protect the labyrinth against intruders. Loman, who was in charge of the labyrinth excavation, felt something indescribably sublime from the statue and showed due courtesy in front of it. At that moment, the statue dropped its halberd to the ground and began to crumble away. The halberd itself seemed unaffected by the time and was imbued with a mysterious energy.<br>'That statue suddenly crumbled and dropped the halberd...'<br>Scarlet said, glancing over the report.<br>'Yes, ma'am.'<br>Scarlet then gazed at Loman.<br>'The unyielding sincerity of protecting a place until his very body collapse... I know a man like that.'<br>'Pardon, ma'am?'<br>He looked at Scarlet with a puzzled face as she handed over the halberd, smiling."
         },

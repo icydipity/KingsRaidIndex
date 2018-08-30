@@ -446,10 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         src="images/heroes/${heroName}/skills/${skillNumber}_2.png"
                         alt="${skillNumber}_2"
                         data-linked-skill="${skillNumber}">
-                    <img class="linked-skill__skill-swap"
-                        src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
-                        alt="swap-skill"
-                        data-swap-skill="${skillNumber}">
+                    <div class="linked-skill__skill-swap" data-swap-skill="${skillNumber}"></div>
                 </div>
             `;
             return responseHTML;
@@ -510,9 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img class="skill-detail__img-hide-att skill-detail--show-att-btn hidden"
                     src="images/icons/Hide-Skill-Attributes.png"
                     alt="Hide Skill Attributes">
-                <img class="skill-detail__img-close-btn"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
-                    alt="Close">
+                <div class="skill-detail__close-btn"></div>
             `;
             return responseHTML;
         }
@@ -533,12 +528,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img class="skill-detail__img-hide-att skill-detail--show-att-btn hidden"
                     src="images/icons/Hide-Skill-Attributes.png"
                     alt="Hide Skill Attributes">
-                <img class="skill-detail__img-close-btn"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
-                    alt="Close">
-                <img class="skill-detail__skill-swap"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
-                    alt="swap-skill">
+                <div class="skill-detail__close-btn"></div>
+                <div class="skill-detail__skill-swap"></div>
             `;
             return responseHTML;
         }
@@ -575,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '.skill-detail__img-hide-att'
             );
             const btnCloseSkillDetail = document.querySelector(
-                '.skill-detail__img-close-btn'
+                '.skill-detail__close-btn'
             );
 
             btnShowSkillAtt.addEventListener('click', () => {

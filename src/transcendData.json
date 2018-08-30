@@ -2788,5 +2788,47 @@
             "name": "Zafir [DARK]",
             "description": "Recovers 500 mana upon using a skill. If there are over 5 enemies, mana recovery rate is doubled and ATK Spd is increased by 500 for 5 sec. This effect cannot be stacked."
         }
+    },
+    "Juno": {
+        "perk1": {
+            "name": "Best Dish / Juno's Spicy Special [LIGHT]",
+            "description": "[Best Dish] Increases ATK of the target by 15% for the duration of skill.<br><br> [Juno's Spicy Special] Target takes 25% increased P.DMG for 10 sec."
+        },
+        "perk2": {
+            "name": "Best Dish / Juno's Spicy Special [DARK]",
+            "description": "[Best Dish] Makes all effects irremovable.<br><br> [Juno's Spicy Special] Reduces Mana Cost by 1."
+        },
+        "perk3": {
+            "name": "Power-up / Help Yourself, Then Get Lost! [LIGHT]",
+            "description": "[Power-up] Increases Mana Cost by 1, but casts shields on 2 targets.<br><br> [Help Yourself, Then Get Lost!] Reduces ATK Spd of hit enemy by 200 for 10 seconds."
+        },
+        "perk4": {
+            "name": "Power-up / Help Yourself, Then Get Lost! [DARK]",
+            "description": "[Power-up] Reduces Mana Cost by 1.<br><br> [Help Yourself, Then Get Lost!] Increases Cooldown of hit enemy's active skills by 2 seconds."
+        },
+        "perk5": {
+            "name": "Cook from Hell [LIGHT]",
+            "description": "Increases Heal Rate by 100%."
+        },
+        "perk6": {
+            "name": "Cook from Hell [DARK]",
+            "description": "Recovers 1 orb of Mana upon use."
+        },
+        "perk7": {
+            "name": "Open for Business! [LIGHT]",
+            "description": "Increases Crit Chance of all allies by 200."
+        },
+        "perk8": {
+            "name": "Open for Business! [DARK]",
+            "description": "Reduces DEF Penetration of all enemies by 200."
+        },
+        "perk9": {
+            "name": "Juno [LIGHT]",
+            "description": "ATK, DEF, HP+15% / P. Block +200"
+        },
+        "perk10": {
+            "name": "Juno [DARK]",
+            "description": "At the beginning of every battle, gains 2 stacks of [Excellent Ingredient] and increases MP Recovery/Sec by 200% for 10 seconds."
+        }
     }
 }
