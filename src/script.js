@@ -7,10 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 (async function () {
-    //Those store promises from fetch data
-    const getKrHeroesData = fetchJSONData('src/heroesData.json');
-    const getUniqueStatsData = fetchJSONData('src/uniqueStatsData.json');
-    const getTranscendData = fetchJSONData('src/transcendData.json');
+    //Store promise from fetch data
+    const getKrData = fetchJSONData('src/heroesData.json');
 
     function fetchJSONData(url) {
         return fetch(url)
@@ -30,12 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    //Variables which store required 'database'
-    //Wait for promises to be solved before continue the code
-    const krHeroesData = await getKrHeroesData;
-    const uniqueStatsData = await getUniqueStatsData;
-    const transcendData = await getTranscendData;
-
+    //krData store required 'database'
+    const krData = await getKrData; //Wait for promises to be solved before continue the code
 
     initialize();
 
@@ -59,6 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainHeroInfo = document.querySelector('.main-info');
         const menuItemProfile = document.querySelector('.menu-item-profile');
 
+        //krHeroesData containts all kr heroes
+        const krHeroesData = krData.hero;
+        const uniqueStatsData = krData.uniqueItemStat;
+        const transcendData = krData.transcend;
+
         //krHeroesAvatar contains hero avatar UI elements which will be assigned later
         let krHeroesAvatar;
 
@@ -73,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //menuType hold the current hero-menu
         let krHero;
         let menuType;
+
+        let hasLinkedSkill = false;
 
         //Handle everything that needed on first page load
         (function handleOnFirstLoad() {
@@ -377,10 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         //Hero Skills
-        function hasLinkedSkill() {
-            return (krHero.hasOwnProperty('linkedSkills'));
-        }
-
         function loadHeroSkills(heroName) {
             if (heroSkills.getAttribute('data-hero-name') !== heroName) {
                 changeHeroSkills(heroName);
@@ -390,63 +387,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function changeHeroSkills(heroName) {
-            if (hasLinkedSkill() === true) {
-                heroSkills.innerHTML = getLinkedHeroSkills(heroName);
+            heroSkills.innerHTML = getHeroSkills(heroName);
+            if (hasLinkedSkill === true) {
                 addEventForSwapSkillButton();
-            } else {
-                heroSkills.innerHTML = getNormalHeroSkills(heroName);
+                hasLinkedSkill === false;
             }
             addEventForHeroSkills();
         }
 
-        function getNormalHeroSkills(heroName) {
-            const responseHTML = `
-                <img class="skills__img"
-                    src="images/heroes/${heroName}/skills/s1.png"
-                    alt="s1">
-                <img class="skills__img"
-                    src="images/heroes/${heroName}/skills/s2.png"
-                    alt="s2">
-                <img class="skills__img"
-                    src="images/heroes/${heroName}/skills/s3.png"
-                    alt="s3">
-                <img class="skills__img"
-                    src="images/heroes/${heroName}/skills/s4.png"
-                    alt="s4">
-            `;
-            return responseHTML;
-        }
-
-        function getLinkedHeroSkills(heroName) {
-            const linkedSkills = krHero.linkedSkills;
+        function getHeroSkills(heroName) {
             let responseHTML = '';
             for (let i = 1; i <= 4; i++) {
-                const skillNumber = 's' + i;
-                if (linkedSkills.includes(skillNumber)) {
-                    responseHTML += getLinkedSkillHTML(heroName, skillNumber);
+                const skillNum = 's' + i;
+
+                if (krHero[skillNum].hasOwnProperty('linked')) {
+                    responseHTML += getLinkedSkillHTML(heroName, skillNum);
+                    hasLinkedSkill = true;
                 } else {
                     responseHTML += `
                         <img class="skills__img"
-                            src="images/heroes/${heroName}/skills/${skillNumber}.png"
-                            alt="${skillNumber}">
+                            src="images/heroes/${heroName}/skills/${skillNum}.png"
+                            alt="${skillNum}">
                     `;
                 }
             }
             return responseHTML;
         }
 
-        function getLinkedSkillHTML(heroName, skillNumber) {
+        function getLinkedSkillHTML(heroName, skillNum) {
             const responseHTML = `
                 <div class="linked-skill">
                     <img class="linked-skill__img skills__img"
-                        src="images/heroes/${heroName}/skills/${skillNumber}.png"
-                        alt="${skillNumber}"
-                        data-linked-skill="${skillNumber}">
+                        src="images/heroes/${heroName}/skills/${skillNum}.png"
+                        alt="${skillNum}"
+                        data-linked-skill="${skillNum}">
                     <img class="linked-skill__img skills__img hidden"
-                        src="images/heroes/${heroName}/skills/${skillNumber}_2.png"
-                        alt="${skillNumber}_2"
-                        data-linked-skill="${skillNumber}">
-                    <div class="linked-skill__skill-swap" data-swap-skill="${skillNumber}"></div>
+                        src="images/heroes/${heroName}/skills/${skillNum}_2.png"
+                        alt="${skillNum}_2"
+                        data-linked-skill="${skillNum}">
+                    <div class="linked-skill__skill-swap" data-swap-skill="${skillNum}"></div>
                 </div>
             `;
             return responseHTML;
@@ -460,9 +439,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function swapSkill() {
-            const skillNumber = this.getAttribute('data-swap-skill');
+            const skillNum = this.getAttribute('data-swap-skill');
             const skills = document.querySelectorAll(
-                `.linked-skill__img[data-linked-skill="${skillNumber}"]`
+                `.linked-skill__img[data-linked-skill="${skillNum}"]`
             );
 
             skills.forEach((skill) => {
@@ -478,29 +457,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function showSkillDetail() {
-            const skillNumber = this.alt;
-            //Check if krHero has linked Skill and skill is linked skill
-            if (hasLinkedSkill() === true && krHero.linkedSkills.includes(skillNumber)) {
-                skillDetail.innerHTML = getLinkedSkillDetail(skillNumber);
-                addEventForSkillDetailSwap(skillNumber);
-            } else {
-                skillDetail.innerHTML = getNormalSkillDetail(skillNumber);
+            const skillNum = this.alt;
+            
+            skillDetail.innerHTML = getSkillDetail(skillNum);
+            if (skillNum.includes('_2') || krHero[skillNum].hasOwnProperty('linked')) {
+                addEventForSkillDetailSwap(skillNum);
             }
             mainHeroInfo.classList.add('hidden');
             skillDetail.classList.remove('hidden');
             addEventForSkillDetail();
         }
 
-        function getNormalSkillDetail(skillNumber) {
-            const responseHTML = `
-                <div class="skill-detail__img-info">
-                    <img class="skill-detail__img"
-                        src="images/heroes/${krHero.name}/skills/${skillNumber}-Info.png"
-                        alt="${skillNumber} Info">
+        function getSkillDetail(skillNum) {
+            const skillDesc = skillNum.includes('_2')
+                ? `${krHero[skillNum.substring(0, 2)].linked.description}`
+                : `${krHero[skillNum].description}`;
+
+            let responseHTML = `
+                <div class="skill-detail__info">
+                    ${skillDesc}
                 </div>
                 <img class="skill-detail__img"
-                    src="images/heroes/${krHero.name}/skills/${skillNumber}-Att.png"
-                    alt="${skillNumber} Attribute">
+                    src="images/heroes/${krHero.name}/skills/${skillNum}-Att.png"
+                    alt="${skillNum} Attribute">
                 <img class="skill-detail__img-show-att skill-detail--show-att-btn"
                     src="images/icons/Show-Skill-Attributes.png"
                     alt="Show Skill Attributes">
@@ -509,56 +488,39 @@ document.addEventListener('DOMContentLoaded', () => {
                     alt="Hide Skill Attributes">
                 <div class="skill-detail__close-btn"></div>
             `;
+
+            if (krHero[skillNum.substring(0, 2)].hasOwnProperty('linked')) {
+                responseHTML += `<div class="skill-detail__skill-swap"></div>`;
+            }
+
             return responseHTML;
         }
 
-        function getLinkedSkillDetail(skillNumber) {
-            const responseHTML = `
-                <div class="skill-detail__img-info">
-                    <img class="skill-detail__img"
-                        src="images/heroes/${krHero.name}/skills/${skillNumber}-Info.png"
-                        alt="${skillNumber} Info">
-                </div>
-                <img class="skill-detail__img"
-                    src="images/heroes/${krHero.name}/skills/${skillNumber}-Att.png"
-                    alt="${skillNumber} Attribute">
-                <img class="skill-detail__img-show-att skill-detail--show-att-btn"
-                    src="images/icons/Show-Skill-Attributes.png"
-                    alt="Show Skill Attributes">
-                <img class="skill-detail__img-hide-att skill-detail--show-att-btn hidden"
-                    src="images/icons/Hide-Skill-Attributes.png"
-                    alt="Hide Skill Attributes">
-                <div class="skill-detail__close-btn"></div>
-                <div class="skill-detail__skill-swap"></div>
-            `;
-            return responseHTML;
-        }
-
-        function addEventForSkillDetailSwap(skillNumber) {
+        function addEventForSkillDetailSwap(skillNum) {
             const swapSkillBtn = document.querySelector('.skill-detail__skill-swap');
             swapSkillBtn.addEventListener('click', () => {
-                swapSkillDetail(skillNumber);
+                swapSkillDetail(skillNum);
                 addEventForSkillDetail();
             });
         }
 
-        function swapSkillDetail(skillNumber) {
-            let newSkillNumber;
+        function swapSkillDetail(skillNum) {
+            let newSkillNum;
 
-            //Ex: skillNumber = 's1_2' or 's1'
-            if (skillNumber.substring(2) === "") {
-                newSkillNumber = skillNumber + "_2";
-                skillDetail.innerHTML = getLinkedSkillDetail(newSkillNumber);
-                addEventForSkillDetailSwap(newSkillNumber);
+            //Ex: skillNum = 's1_2' or 's1'
+            if (skillNum.substring(2) === "") {
+                newSkillNum = skillNum + "_2";
+                skillDetail.innerHTML = getSkillDetail(newSkillNum);
+                addEventForSkillDetailSwap(newSkillNum);
             } else {
-                newSkillNumber = skillNumber.substring(0, 2);
-                skillDetail.innerHTML = getLinkedSkillDetail(newSkillNumber);
-                addEventForSkillDetailSwap(newSkillNumber);
+                newSkillNum = skillNum.substring(0, 2);
+                skillDetail.innerHTML = getSkillDetail(newSkillNum);
+                addEventForSkillDetailSwap(newSkillNum);
             }
         }
 
         function addEventForSkillDetail() {
-            const skillInfo = document.querySelector('.skill-detail__img-info');
+            const skillInfo = document.querySelector('.skill-detail__info');
             const btnShowSkillAtt = document.querySelector(
                 '.skill-detail__img-show-att'
             );
@@ -645,13 +607,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return responseHTML;
         }
 
-        function getTranscendPerk1and2ItemHTML(transcendKey) {
+        function getTranscendPerk1and2ItemHTML(classType) {
             let responseHTML = '';
             const repeatTimes = 4;
 
             for (let i = 1; i <= repeatTimes; i++) {
                 //Ex: transcend['All']['perk1']
-                const perk = transcendData[`${transcendKey}`][`perk${i}`];
+                const perk = transcendData[`${classType}`][`perk${i}`];
                 const imgName = perk.name.replace(/\s/g, '-');
                 responseHTML += `
                     <li class="perk__list--item list-inline-item col-3">
@@ -688,20 +650,20 @@ document.addEventListener('DOMContentLoaded', () => {
             let responseHTML = '';
             const repeatTimes = 4;
             for (let i = 1; i <= repeatTimes; i++) {
-                //Ex: transcend['Kasel']['perk1']
-                const perk1 = transcendData[`${heroName}`][`perk${(i * 2 - 1)}`];
-                const perk2 = transcendData[`${heroName}`][`perk${(i * 2)}`];
                 const textNum = (i % 2 !== 0) ? 1 : 3;
                 const textNum2 = (i % 2 !== 0) ? 2 : 4;
-
+                const skillNum = 's' + i;
+                const perkName = krHero[skillNum].hasOwnProperty('linked')
+                    ? `${krHero[skillNum].name} / ${krHero[skillNum].linked.name}`
+                    : `${krHero[skillNum].name}`;
                 responseHTML += `
                     <li class="perk__list--item list-inline-item col-3">
                         <img class="perk__img"
                             src="images/heroes/${heroName}/transcend/s${i}-Light.png"
                             alt="s${i}-Light">
                         <span class="tooltiptext tooltiptext--text${textNum}">
-                            <h5 class="tooltiptext__h5">${perk1.name}</h5>
-                            <h6 class="tooltiptext__h6">${perk1.description}</h6>
+                            <h5 class="tooltiptext__h5">${perkName} [LIGHT]</h5>
+                            <h6 class="tooltiptext__h6">${krHero[skillNum].light}</h6>
                         </span>
                     </li>
                     <li class="perk__list--item list-inline-item col-3">
@@ -709,8 +671,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             src="images/heroes/${heroName}/transcend/s${i}-Dark.png"
                             alt="s${i}-Dark">
                         <span class="tooltiptext tooltiptext--text${textNum2}">
-                            <h5 class="tooltiptext__h5">${perk2.name}</h5>
-                            <h6 class="tooltiptext__h6">${perk2.description}</h6>
+                            <h5 class="tooltiptext__h5">${perkName} [DARK]</h5>
+                            <h6 class="tooltiptext__h6">${krHero[skillNum].dark}</h6>
                         </span>
                     </li>
                 `;
@@ -730,8 +692,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                     src="images/heroes/${heroName}/transcend/${heroName}-Light.png"
                                     alt="${heroName}-Light">
                                 <span class="tooltiptext tooltiptext--text1">
-                                    <h5 class="tooltiptext__h5">${transcendData[heroName].perk9.name}</h5>
-                                    <h6 class="tooltiptext__h6">${transcendData[heroName].perk9.description}</h6>
+                                    <h5 class="tooltiptext__h5">${krHero.name} [LIGHT]</h5>
+                                    <h6 class="tooltiptext__h6">${krHero.t5.light}</h6>
                                 </span>
                             </li>
                             <li class="perk__list--item list-inline-item col-3">
@@ -739,8 +701,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                     src="images/heroes/${heroName}/transcend/${heroName}-Dark.png"
                                     alt="${heroName}-Dark">
                                 <span class="tooltiptext tooltiptext--text2">
-                                    <h5 class="tooltiptext__h5">${transcendData[heroName].perk10.name}</h5>
-                                    <h6 class="tooltiptext__h6">${transcendData[heroName].perk10.description}</h6>
+                                    <h5 class="tooltiptext__h5">${krHero.name} [DARK]</h5>
+                                    <h6 class="tooltiptext__h6">${krHero.t5.dark}</h6>
                                 </span>
                             </li>
                             <li class="perk__list--item list-inline-item col-3"></li>
@@ -764,7 +726,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function changeHeroWeapon() {
-            heroWeapon.innerHTML = getUniqueItemHTML('uw');
+            const itemData = krHero.uw;
+            heroWeapon.innerHTML = getUniqueItemHTML('uw', itemData);
             addEventForUniqueItem('uw');
         }
 
@@ -791,22 +754,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function changeHeroTreasure(treasure) {
             if (treasure === 'ut-s2') {
-                heroTreasureS2.innerHTML = getUniqueItemHTML(treasure);
+                const itemData = krHero.s2.ut;
+                heroTreasureS2.innerHTML = getUniqueItemHTML(treasure, itemData);
             } else {
-                heroTreasureS3.innerHTML = getUniqueItemHTML(treasure);
+                const itemData = krHero.s3.ut;
+                heroTreasureS3.innerHTML = getUniqueItemHTML(treasure, itemData);
             }
             addEventForUniqueItem(treasure);
         }
 
-        function getUniqueItemHTML(itemType) {
-            const statType = (itemType === 'uw') ? 'ATK' : 'HP';
-            const itemStat = (itemType === 'uw') ?
-                uniqueStatsData.weaponAtk[krHero.class][0] :
-                uniqueStatsData.treasureHp[0];
+        function getUniqueItemHTML(itemType, itemData) {
+            let statType;
+            let itemStat;
+
+            if (itemType === 'uw') {
+                statType = 'ATK';
+                itemStat = uniqueStatsData.weaponAtk[krHero.class][0];
+            } else {
+                statType = 'HP';
+                itemStat = uniqueStatsData.treasureHp[0];
+            }
             const responseHTML = `
                 <div class="unique-item__banner">
                     <p class="unique-item__banner-text">
-                        ${krHero[itemType].name}
+                        ${itemData.name}
                     </p>
                 </div>
                 <div class="unique-item__basic-info row">
@@ -836,10 +807,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <div class="${itemType}__description unique-item__area-text">
-                    ${krHero[itemType].descriptions[0]}
+                    ${itemData.description[0]}
                 </div>
                 <div class="${itemType}__introduction unique-item__area-text hidden">
-                    ${krHero[itemType].introduction}
+                    ${itemData.story}
                 </div>
                 <div class="unique-item__img-button-wrapper row">
                     <div class="col-6 unique-item__img-button-wrapper--padding-left">
@@ -886,10 +857,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemDescription = document.querySelector(`.${itemType}__description`);
             if (itemType === 'uw') {
                 itemStat.innerHTML = uniqueStatsData.weaponAtk[krHero.class][uniqueStar];
-                itemDescription.innerHTML = krHero[itemType].descriptions[uniqueStar];
+                itemDescription.innerHTML = krHero.uw.description[uniqueStar];
             } else {
                 itemStat.innerHTML = uniqueStatsData.treasureHp[uniqueStar];
-                itemDescription.innerHTML = krHero[itemType].descriptions[uniqueStar];
+                const responseHTML = itemType === 'ut-s2'
+                    ? krHero.s2.ut.description[uniqueStar]
+                    : krHero.s3.ut.description[uniqueStar];
+                itemDescription.innerHTML = responseHTML;
             }
 
             changeUniqueStarSelected(itemType, uniqueStar);

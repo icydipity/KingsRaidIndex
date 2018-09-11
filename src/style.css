@@ -195,6 +195,8 @@
 }
 
 .right-content__container {
+    min-width: 100%;
+    min-height: 100%;
     max-height: 100%;
     max-width: 100%;
 }
@@ -371,19 +373,20 @@
     visibility: visible;
 }
 
-.skill-detail__img-info {
+.skill-detail__info {
+    background-color: #574736;
     border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
     width: 88.8%;
     position: absolute;
     height: 52%;
     top: 30.8%;
     margin-left: 5.55%;
+    padding: 4px 8px;
     overflow: hidden;
     overflow-y: auto;
-}
-
-.skill-detail__img-info::-webkit-scrollbar {
-    display: none;
 }
 
 .skill-detail__skill-swap {
@@ -582,6 +585,9 @@ footer {
     .fa-star {
         font-size: 1.25rem;
     }
+    .skill-detail__info {
+        font-size: 0.9rem;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 575.98px) {
@@ -646,6 +652,9 @@ footer {
     .unique-item__img-button {
         height: 2.5rem;
         width: auto;
+    }
+    .skill-detail__info {
+        font-size: 1rem;
     }
 }
 
@@ -740,6 +749,9 @@ footer {
     }
     .unique-item__area-text {
         height: 42%;
+    }
+    .skill-detail__info {
+        font-size: 0.7rem;
     }
 }
 
@@ -870,6 +882,9 @@ footer {
         height: 41%;
         font-size: 1rem;
     }
+    .skill-detail__info {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -945,5 +960,8 @@ footer {
     }
     .unique-item__img-button-wrapper--padding-right {
         padding-right: 8%;
+    }
+    .skill-detail__info {
+        font-size: 1rem;
     }
 }
