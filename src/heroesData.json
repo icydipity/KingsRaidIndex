@@ -60,7 +60,7 @@
             },
             "s4": {
                 "name": "Life Drinker",
-                "description": "Increases ATK by 4212 and Max HP by 21076 upon killing an enemy. Upon taking lethal damage, casts [Soaking Blood] and reduces Max HP by 50%. This effect does not occur if [Soaking Blood] is in Cooldown. Consumes all mana upon activation.",
+                "description": "Increases ATK by 4212 and Max HP by 21076 upon killing an enemy. Stacks up to max 50. Upon taking fatal DMG, casts [Soaking Blood], and decreases Max HP by 50%. This effect is not applied when [Soaking Blood] is in cooldown. This skill consumes all Mana upon activation.",
                 "light": "Increases Max HP by 100% upon killing an enemy and changes the Max HP reduction after auto-casting [Soaking Blood] to 33%.",
                 "dark": "Increases ATK by 200% upon killing an enemy, but Max HP boost does not apply."
             },
@@ -291,25 +291,25 @@
             "uw": {
                 "name": "Whispering Sands, Arlaq",
                 "description": [
-                    "[Blessing of Oasis] can be stacked up to max 12 times, and upon auto attack, all skill cooldown is decreased by 4% with 10% chance.",
-                    "[Blessing of Oasis] can be stacked up to max 13 times, and upon auto attack, all skill cooldown is decreased by 4.8% with 10% chance.",
-                    "[Blessing of Oasis] can be stacked up to max 14 times, and upon auto attack, all skill cooldown is decreased by 5.8% with 10% chance.",
-                    "[Blessing of Oasis] can be stacked up to max 15 times, and upon auto attack, all skill cooldown is decreased by 7% with 10% chance.",
-                    "[Blessing of Oasis] can be stacked up to max 16 times, and upon auto attack, all skill cooldown is decreased by 8.4% with 10% chance.",
-                    "[Blessing of Oasis] can be stacked up to max 17 times, and upon auto attack, all skill cooldown is decreased by 10% with 10% chance."
+                    "[Blessing of Oasis] can be stacked up to max 14 times, and upon auto attack, all skill cooldown is decreased by 4% with 10% chance.",
+                    "[Blessing of Oasis] can be stacked up to max 15 times, and upon auto attack, all skill cooldown is decreased by 4.8% with 10% chance.",
+                    "[Blessing of Oasis] can be stacked up to max 16 times, and upon auto attack, all skill cooldown is decreased by 5.8% with 10% chance.",
+                    "[Blessing of Oasis] can be stacked up to max 17 times, and upon auto attack, all skill cooldown is decreased by 7% with 10% chance.",
+                    "[Blessing of Oasis] can be stacked up to max 18 times, and upon auto attack, all skill cooldown is decreased by 8.4% with 10% chance.",
+                    "[Blessing of Oasis] can be stacked up to max 20 times, and upon auto attack, all skill cooldown is decreased by 10% with 10% chance."
                 ],
                 "story": "A rare treasure that is the manifestation of passion burning like a flame in the desert. A pair of these beautiful weapons is known to have been stored in the ancient God King's repositorium. When swung, they beautifully sound like the wind with the scent of a breeze. It is a sweet but lethal temptation, just like a mirage in the desert..."
             },
             "s1": {
                 "name": "Whisper of Sand",
-                "description": "Attacks target enemy and deals 85122 M.DMG to enemies in close range, decreasing enemy block chance by 500 and Crit resistance by 500 for 5 sec. Additionally, attacks and deals 110667 M.DMG and stuns them for 3 sec.",
+                "description": "Attacks target enemy and deals 85122 M.DMG to enemies in close range, decreasing enemy block chance by 500 and Crit resistance by 500 for 8 sec. Additionally, attacks and deals 110667 M.DMG and stuns them for 3 sec.",
                 "light": "Mana cost is reduced by 1.",
                 "dark": "Target takes 25% increased M.DMG for 10 sec."
             },
             "s2": {
                 "name": "Enchanting Flow",
                 "description": "Increases own ATK by 25288 and Crit DMG by 70% for 10 sec. Then moves a short distance forward, dealing 79852 M.DMG to enemies in movement range and Charms them for 5 sec if the skill was used in the Arena. Can activate [Alluring Ambush] once within 5 sec after use.",
-                "light": "Gains 2 orbs of mana after movement. Gained Mana is consumed over 5 sec.",
+                "light": "Gains 2 orbs of mana after movement. Gained Mana is consumed over 10 sec.",
                 "dark": "After using [Enchanting Flow], [Alluring Ambush] can be used twice within 10 sec.",
                 "ut": {
                     "name": "Halidom of Trovatia",
@@ -330,8 +330,8 @@
             },
             "s3": {
                 "name": "Dance of the Desert",
-                "description": "Attacks enemies in range 30 times, dealing a total of 468690 M.DMG. Additionally throws the 'Blades of Arlark' at random enemies 30 times, dealing a total of 253260 M.DMG. Extra 1693 DMG is stacked every time the blade hits the same enemy. [Blinding Acceleration] can be used once during skill activation, and the 'Blades of Arlaq' prioritize targets inflicted by Charm.",
-                "light": "Mana cost of [Blinding Acceleration] is decreased by 1 and skill duration is increased by 2 sec.",
+                "description": "Attacks enemies in range 30 times, dealing a total of 563880 M.DMG. Additionally throws the 'Blades of Arlaq' at random enemies 30 times, dealing a total of 379800 M.DMG. Extra 1693 DMG is stacked every time the blade hits the same enemy. [Blinding Acceleration] can be used once during skill activation, and the 'Blades of Arlaq' prioritize targets inflicted by Charm.",
+                "light": "Recovers 30 Mana every hit.",
                 "dark": "Mana cost is increased by 1 and DMG is increased by 100%.",
                 "ut": {
                     "name": "Veil of Charm",
@@ -347,18 +347,18 @@
                 },
                 "linked": {
                     "name": "Blinding Acceleration",
-                    "description": "Gains immunity to CC for 1 sec and ATK Spd is increased by 800."
+                    "description": "Gains immunity to CC for 3 sec and ATK Spd is increased by 800."
                 }
             },
             "s4": {
                 "name": "Blessing of Oasis",
-                "description": "Decreases CC duration inflicted on self by 30%. Upon using a skill, gains [Blessing of Oasis] for 20 sec, increasing own Penetration by 30 and DEF by 836. [Blessing of Oasis] can be stacked up to max 10 times and cannot be dispelled.",
+                "description": "Decreases CC duration inflicted on self by 30%. Upon using a skill, gains [Blessing of Oasis] for 20 sec, increasing own Penetration by 30 and DEF by 1680. [Blessing of Oasis] can be stacked up to max 10 times and cannot be dispelled.",
                 "light": "Gains 2 stack of [Blessing of Oasis].",
                 "dark": "Per each stack, takes 2% less DMG from enemies other than heroes"
             },
             "t5": {
                 "light": "ATK, DEF, HP+15% / ATK.Spd +100",
-                "dark": "At the start of each battle, gains immunity to CC for 5 sec, and ACC, CC ACC are increased by 300 for 10 sec."
+                "dark": "At the start of each battle, gains immunity to CC for 7 sec, and ACC, CC ACC are increased by 300 for 10 sec."
             }
         },
         {
@@ -790,20 +790,20 @@
             "uw": {
                 "name": "Hellhound, Akistra",
                 "description": [
-                    "The normal attack shoots an additional bullet that deals 50% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 30% and Crit DMG by 30% for 10 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
-                    "The normal attack shoots an additional bullet that deals 60% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 36% and Crit DMG by 36% for 10 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
-                    "The normal attack shoots an additional bullet that deals 70% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 43% and Crit DMG by 43% for 10 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
-                    "The normal attack shoots an additional bullet that deals 85% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 52% and Crit DMG by 52% for 10 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
-                    "The normal attack shoots an additional bullet that deals 100% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 62% and Crit DMG by 62% for 10 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
-                    "The normal attack shoots an additional bullet that deals 125% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 75% and Crit DMG by 75% for 10 sec. 'Hellhound, Akistra' is only activated once at 20 sec."
+                    "The normal attack shoots an additional bullet that deals 50% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 30% and Crit DMG by 30% for 20 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
+                    "The normal attack shoots an additional bullet that deals 60% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 36% and Crit DMG by 36% for 20 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
+                    "The normal attack shoots an additional bullet that deals 70% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 43% and Crit DMG by 43% for 20 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
+                    "The normal attack shoots an additional bullet that deals 85% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 52% and Crit DMG by 52% for 20 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
+                    "The normal attack shoots an additional bullet that deals 100% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 62% and Crit DMG by 62% for 20 sec. 'Hellhound, Akistra' is only activated once at 20 sec.",
+                    "The normal attack shoots an additional bullet that deals 125% of ATK as P.DMG. When the skill ends, 'Hellhound, Akistra' is activated, increasing ATK by 75% and Crit DMG by 75% for 20 sec. 'Hellhound, Akistra' is only activated once at 20 sec."
                 ],
                 "story": "It is unarguably the culmination of the latest imperial technomagi technology. It can transform into three modes, the last of which uses magic that is so devastating that its use has to be restricted. According to Valance, the head of the imperial weapons development organization Magos Le’Flamme, the new weapon Archistra was stolen, immediately after its development, by Crow, a former naval officer who was dishonorably discharged. It remains to be confirmed whether Crow really did manage to infiltrate one of the Empire's most important organizations to steal Archistra... It's also possible that Valance simply handed it over to him, given their long friendship."
             },
             "s1": {
                 "name": "Target will be Eliminated.",
-                "description": "Deals 164145 P.DMG to enemies in front through 15 rounds and leaves 'Hunting Dog's Fang Mark' for 40 sec. The Hunting Dog's Fang Mark can be stacked up to 100.",
+                "description": "Deals a total of 164145 P.DMG to enemies in front over 15 times and leaves 2 'Hunting Dog's Fang Marks' for 40 sec. Hunting Dog's Fang Mark stacks up to max 100 times.",
                 "light": "Upon each DMG dealt, recovers 30 Mana.",
-                "dark": "Stacks up 1 additional Hunting Dog's Fang Mark."
+                "dark": "Gains immunity to CC while in use."
             },
             "s2": {
                 "name": "Struggle is Meaningless.",
@@ -1257,7 +1257,7 @@
             },
             "s4": {
                 "name": "Flame Diffusion",
-                "description": "Gains a 20% chance to attack 3 random enemies upon landing normal attacks, dealing 81804 M.DMG to the target and the enemies near it and inflicting 1 stack of Ember on them. Ember deals a total of 101880 M.DMG over 20 sec, and reduces the target's M.DEF by 5%.",
+                "description": "Normal attacks get a 20% chance to attack 3 random enemies, dealing 81804 M.DMG to the target and enemies near it and inflicting 1 stack of Ember. Ember deals a total of 101880 M.DMG over 20 sec, reduces the target's M.DEF by 5%, and stacks up to max 5 times.",
                 "light": "Ember stack maximum is changed to 6.",
                 "dark": "Activation chance changes to 30%."
             },
@@ -2308,18 +2308,18 @@
             "uw": {
                 "name": "The Bluewind, Coventina",
                 "description": [
-                    "Enemies inflicted by Electrify receive 50% of ATK as M.DMG every 5 sec, and have a 10% chance of being Stunned.",
-                    "Enemies inflicted by Electrify receive 50% of ATK as M.DMG every 5 sec, and have a 12% chance of being Stunned.",
-                    "Enemies inflicted by Electrify receive 50% of ATK as M.DMG every 5 sec, and have a 14% chance of being Stunned.",
-                    "Enemies inflicted by Electrify receive 50% of ATK as M.DMG every 5 sec, and have a 17% chance of being Stunned.",
-                    "Enemies inflicted by Electrify receive 50% of ATK as M.DMG every 5 sec, and have a 20% chance of being Stunned.",
-                    "Enemies inflicted by Electrify receive 50% of ATK as M.DMG every 5 sec, and have a 25% chance of being Stunned."
+                    "Grants a 10% chance to deal M.DMG equal to 100% of ATK and inflicts Electric Shock on 2 random enemies through a normal attack. If the target is already inflicted with Electric Shock, stuns the target for 2 sec.",
+                    "Grants a 12% chance to deal M.DMG equal to 120% of ATK stat and inflicts Electric Shock on 2 random enemies through a normal attack. If the target is already inflicted with Electric Shock, stuns the target for 2 sec.",
+                    "Grants a 14% chance to deal M.DMG equal to 140% of ATK stat and inflicts Electric Shock on 2 random enemies through a normal attack. If the target is already inflicted with Electric Shock, stuns the target for 2 sec.",
+                    "Grants a 17% chance to deal M.DMG equal to 170% of ATK stat and inflicts Electric Shock on 2 random enemies through a normal attack. If the target is already inflicted with Electric Shock, stuns the target for 2 sec.",
+                    "Grants a 21% chance to deal M.DMG equal to 210% of ATK stat and inflicts Electric Shock on 2 random enemies through a normal attack. If the target is already inflicted with Electric Shock, stuns the target for 2 sec.",
+                    "Grants a 25% chance to deal M.DMG equal to 250% of ATK stat and inflicts Electric Shock on 2 random enemies through a normal attack. If the target is already inflicted with Electric Shock, stuns the target for 2 sec."
                 ],
                 "story": "A staff resembling the four-winged thunderbird. Indeed, it has been crafted from a feather of a thunderbird, a beast considered holy among the Skywind Orcs. The staff has the power to communicate with the sky, read the weather, and control the air. To a Skywind shaman who uses the power of lightning, this staff is the ultimate medium."
             },
             "s1": {
                 "name": "Thunderbolt",
-                "description": "Drops 5 lightning bolts upon a random enemy, dealing 211235 M.DMG and inflicting Electrify. Electrified enemy is stunned for 3 sec.",
+                "description": "Drops 5 lightning bolts upon a random enemy, dealing 252550 M.DMG and inflicting Electrify. Electrified enemy is stunned for 3 sec.",
                 "light": "Mana cost is reduced by 1.",
                 "dark": "Target takes 25% increased M.DMG for 10 sec."
             },
@@ -2361,13 +2361,13 @@
             },
             "s4": {
                 "name": "Chain Lightning",
-                "description": "Deals 19748 M.DMG to 4 enemies every 15 sec, and inflictes Electrify for 20 sec.",
+                "description": "Deals 59261 M.DMG to 4 enemies every 15 sec, and inflicts Electric Shock for 20 sec. Enemies inflicted with Electric Shock will take a total M.DMG of 103440 over 20 sec.",
                 "light": "Crit Chance is increased by 400.",
                 "dark": "If there is 1 enemy, Stun duration is increased by 3 sec."
             },
             "t5": {
                 "light": "ATK, DEF, HP+15% / Crit Chance +100",
-                "dark": "Gains stacks every time allies are hit. When 50 stacks are acheived, drop lightning upon a random enemy 3 times, dealing 240% of ATK as DMG and inflicting stun for 1 sec."
+                "dark": "When taking DMG, decreases ATK Spd of the attacking enemy by 300 for 5 sec. This effect is activated only once every 5 sec."
             }
         },
         {
@@ -2574,7 +2574,7 @@
             },
             "t5": {
                 "light": "ATK, DEF, HP+15% / P. Block +200",
-                "dark": "Upon attacking, there is a 10% chance of dealing 100% of ATK as M.DMG to a random enemy, while also removing 300 mana and inflicting Silence for 1 sec."
+                "dark": "Upon attacking, there is a 10% chance of dealing 120% of ATK as M.DMG to a random enemy, while also removing 300 mana and inflicting Silence for 1 sec."
             }
         },
         {
@@ -3285,15 +3285,15 @@
             },
             "s1": {
                 "name": "Fierce Winds",
-                "description": "Dashes toward the enemy 2 times, dealing 212140 P.DMG to enemies in range, knocking them down for 3 sec.",
+                "description": "Dashes toward the enemy 2 times, dealing 212140 P.DMG to enemies in range, knocking them down for 3 sec. If the target is not a Hero, deals 158995 additional P.DMG.",
                 "light": "If there is 1 enemy, DMG is increased by 100%.",
                 "dark": "Target changes to the enemy with the highest ATK."
             },
             "s2": {
                 "name": "Wind Reading",
-                "description": "All allies' P.Dodge Chance is increased by 250 for 15 sec, and ATK is increased by 17909.",
-                "light": "ATK boost is increased by 40%.",
-                "dark": "Increases own Crit Chance by 600.",
+                "description": "All allies' P.Dodge Chance is increased by 250 for 15 sec, and ATK is increased by 25079.",
+                "light": "Mana cost is reduced by 1.",
+                "dark": "Increases DMG dealt on non-Hero enemies by 30% for the duration of skill.",
                 "ut": {
                     "name": "Himmullis's Scarf",
                     "description": [
@@ -3309,7 +3309,7 @@
             },
             "s3": {
                 "name": "Dive Bomb",
-                "description": "Flies up and strikes 296346 P.DMG to enemies in range. Knocked down enemies take 50% increased DMG.",
+                "description": "Flies up and strikes 296346 P.DMG to enemies in range. Knocked down enemies take 50% increased DMG. If the target is not a Hero, deals 444527 additional P.DMG.",
                 "light": "DMG is increased by 40%.",
                 "dark": "Reduces cooldown by 10% per each enemy that takes Critical DMG.",
                 "ut": {
@@ -3430,7 +3430,7 @@
             "s2": {
                 "name": "Time Fragments",
                 "description": "Attacks random enemies 6 times, dealing a total of 431328 M.DMG. With 50% chance, 'Time Fragments' cooldown resets and consumes no mana for the next single activation.",
-                "light": "DMG is increased by 40%.",
+                "light": "Target changes to 2 random enemies.",
                 "dark": "While in cooldown, auto-attacks will reduce the cooldown of 'Time Fragments' by 1 sec.",
                 "ut": {
                     "name": "Fragment Collection",
@@ -3448,8 +3448,8 @@
             "s3": {
                 "name": "Time Distortion",
                 "description": "Deals 317788 M.DMG to all enemies and increases all allies' ATK Spd by 250 for 15 sec. All allies' skill cooldown is reduced by 50%. 'Time Distortion' is not affected by skill cooldown reduction.",
-                "light": "All allies recover 1 orb of mana.",
-                "dark": "While in use, gain immunity to CC.",
+                "light": "Increases Mana Cost by 2 and fully recovers Mana for all allies.",
+                "dark": "When there are 5 or more enemies, increases DMG by 100%. Hit Enemies take extra 50% DMG for 10 sec.",
                 "ut": {
                     "name": "Threads of Time",
                     "description": [
@@ -3465,9 +3465,9 @@
             },
             "s4": {
                 "name": "Clock Magic",
-                "description": "Upon using a skill, next 2 auto attacks deal 174785 extra M.DMG and have a 30% chance of inflicting Petrify for 3 sec.",
-                "light": "Additional DMG effect count changes to 1 time, and DMG is increased by 100%.",
-                "dark": "Additional DMG effect stack is limited to 20 times max, and per each stack, ATK is increased by 3%."
+                "description": "Upon using the skill, next 2 attacks deal 174785 extra M.DMG and have a 30% chance of inflicting Petrify for 3 sec. This effect activates every 1 sec.",
+                "light": "Changes the instances of gaining extra DMG from using the skill to 3 times.",
+                "dark": "Changes the chance to Petrify to 40%."
             },
             "t5": {
                 "light": "ATK, DEF, HP+15% / ATK.Spd +100",
@@ -3630,13 +3630,13 @@
             },
             "s1": {
                 "name": "Vital Strike",
-                "description": "Deals 212704 P.DMG to frontal enemies in range and stuns them for 1 sec. This attack always inflicts a Crit Hit.",
+                "description": "Deals 276387 P.DMG to frontal enemies in range and stuns them for 1 sec. This attack always inflicts a Crit Hit.",
                 "light": "Stun duration is increased by 2 sec.",
                 "dark": "No longer Crits unconditionally, and Crit DMG is increased by 150%."
             },
             "s2": {
                 "name": "Coordination",
-                "description": "For 20 sec, Priscilla and an ally with the highest ATK changes to a 'Coordination' state. When in this state, Priscilla and ally's ATK rises by 15% + 8215 of Priscilla's ATK.",
+                "description": "For 20 sec, places Priscilla and an ally with the highest ATK in 'Coordination' state, and dispels Negative Effects. Priscilla and the ally in Coordination State get an ATK boost equal to 15% of Priscilla's ATK + 8215.",
                 "light": "Crit DMG is increased by 80%.",
                 "dark": "While in Co-Op state, auto attacks increase the target's received DMG from all sources by 15%.",
                 "ut": {
@@ -3705,7 +3705,7 @@
             },
             "s2": {
                 "name": "Sharp End",
-                "description": "ATK is increased by 36035 for 20 sec and Crit Chance is increased by 500.",
+                "description": "Increases ATK by 36035 for 20 sec and increases Crit Chance by 500. This effect cannot be dispelled.",
                 "light": "Mana cost is reduced by 1.",
                 "dark": "In exchange for 1 additional Mana Cost, Crit Chance effect is changed to a 100% Crit DMG boost. Also gains a 25% DMG boost towards Bosses.",
                 "ut": {
@@ -3741,9 +3741,9 @@
             },
             "s4": {
                 "name": "Lucky Child",
-                "description": "Upon a Crit Hit, ATK is increased by 8424 for 10 sec. Can be stacked up to 5 times max.",
+                "description": "Upon a Crit Hit, ATK is increased by 8424 for 10 sec. Can be stacked up to 8 times max.",
                 "light": "Per each stack, DMG is increased by 4% to enemies other than heroes.",
-                "dark": "When holding 5 stacks, takes 20% reduced DMG."
+                "dark": "With 5 or more stacks, increases All Resistance by 20%."
             },
             "t5": {
                 "light": "ATK, DEF, HP+15% / Crit DMG +20%",
