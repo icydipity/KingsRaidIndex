@@ -1,6 +1,79 @@
 {
     "hero": [
         {
+            "name": "Seria",
+            "class": "Warrior",
+            "hasProfile": false,
+            "uw": {
+                "name": "Executioner of Domains, Elsion",
+                "description": [
+                    "Own Heal Rate is reduced by 20%. Upon a critical skill hit, deals additional M.DMG by 30% of ATK. Hit target's Heal Rate is reduced by 24% for 5 sec, and increases own Heal Rate by 4% for 20 sec. The Heal rate increasing effect can be stacked up to 5 times.",
+                    "Own Heal Rate is reduced by 20%. Upon a critical skill hit, deals additional M.DMG by 36% of ATK. Reduces Heal Rate of the target by 29% for 5 sec, and increases own Heal Rate by 5% for 20 sec. The Heal rate increasing effect can be stacked up to 5 times.",
+                    "Own Heal Rate is reduced by 20%. Upon a critical skill hit, deals additional M.DMG by 42% of ATK. Reduces Heal Rate of the target by 35% for 5 sec, and increases own Heal Rate by 6% for 20 sec. The Heal rate increasing effect can be stacked up to 5 times.",
+                    "Own Heal Rate is reduced by 20%. Upon a critical skill hit, deals additional M.DMG by 51% of ATK. Reduces Heal Rate of the target by 42% for 5 sec, and increases own Heal Rate by 7% for 20 sec. The Heal rate increasing effect can be stacked up to 5 times.",
+                    "Own Heal Rate is reduced by 20%. Upon a critical skill hit, deals additional M.DMG by 63% of ATK. Reduces Heal Rate of the target by 50% for 5 sec, and increases own Heal Rate by 9% for 20 sec. The Heal rate increasing effect can be stacked up to 5 times.",
+                    "Own Heal Rate is reduced by 20%. Upon a critical skill hit, deals additional M.DMG by 75% of ATK. Reduces Heal Rate of the target by 60% for 5 sec, and increases own Heal Rate by 10% for 20 sec. The Heal rate increasing effect can be stacked up to 5 times."
+                ],
+                "story": "A sword of authority passed down to the masters of ShadowHilts. This sword contains the power of mighty beings that made a pact to serve the ShadowHilts. Some of them were Elementals, some were innocent spirits, and some even demons. It is known that tens of thousands of evil forces fell to this sword. It also has a demonic quality that binds the spirit of the slain evil to the blade. Despite its great power, fewer than 5 people in 600 years that were able to wield this sword. Seria, the 101st Heir of ShadowHilts and the only master in history chosen by the sword, entered the pact with the sword to put her beloved sister to rest."
+            },
+            "s1": {
+                "name": "Mysterious Sword - Falling Petals",
+                "description": "Performs a horizontal slash to the front and deals 161315 M.DMG to the target and enemies in a narrow range. Can activate [Mysterious Sword - Blossom] once within 5 sec after use.",
+                "light": "[Mysterious Sword - Falling Petals] - Mana cost is reduced by 1. [Mysterious Sword - Blossom] - Hit enemies' heal rate is reduced by 50% for 5 sec.",
+                "dark": "[Mysterious Sword - Falling Petals] - Target takes 25% increased M.DMG for 10 sec. [Mysterious Sword - Blossom] - Mana cost is increased by 1, and Ignores enemy's DEF.",
+                "linked": {
+                    "name": "Mysterious Sword - Blossom",
+                    "description": "Performs a vertical slash to the front and deals 171588 M.DMG to the target and enemies in a narrow range."
+                }
+            },
+            "s2": {
+                "name": "Blood Scattering Blade",
+                "description": "Rapidly charges forward to deal 29043 M.DMG and inflicts irremovable Original Sin of Blood on enemies for 3 sec. Enemies under Original Sin of Blood have their ATK Spd reduced by 300. Shortly afterward, attacks enemies under Original Sin of Blood 2 times, and deals additional 96136 M.DMG, and if the target is not a hero, deals additional 94128 DEF Ignoring M.DMG.",
+                "light": "Reduces Mana Cost by 1.",
+                "dark": "Upon each DMG dealt, recovers 200 Mana.",
+                "ut": {
+                    "name": "Ring of Abyss",
+                    "description": [
+                        "[Blood Scattering Blade] Increases DMG by 50% and reduces M.Block of affected enemies by 200.",
+                        "[Blood Scattering Blade] Increases DMG by 50% and reduces M.Block of affected enemies by 240.",
+                        "[Blood Scattering Blade] Increases DMG by 50% and reduces M.Block of affected enemies by 290.",
+                        "[Blood Scattering Blade] Increases DMG by 50% and reduces M.Block of affected enemies by 350.",
+                        "[Blood Scattering Blade] Increases DMG by 50% and reduces M.Block of affected enemies by 420.",
+                        "[Blood Scattering Blade] Increases DMG by 50% and reduces M.Block of affected enemies by 500."
+                    ],
+                    "story": "A silver ring that represents the ShadowHilts. Seria touches it whenever she feels her life is meaningless. Doing so would remind her of her dead comrades, filling her heart with the need for vengeance against her sister Erze. Ironically, the ring has a note written by Erze, hidden within the ring's jewel when she was young, but Seria still doesn't know about it."
+                }
+            },
+            "s3": {
+                "name": "Red Moon Blade",
+                "description": "Brandishes a moon-bloodying sword, dealing 376079 M.DMG to enemies in a wide range, and additional 186384 M.DMG on non-Hero enemies. When the moon is ripe, gains Moonlight for 1 sec, and when cast at this state, deals 415888 M.DMG to enemies and reduces their Heal Rate by 100%. If the target is not a hero, deals additional 195815 M.DMG.The caster is not affected by ATK Spd related effects while casting.",
+                "light": "Dispels positive effects of all enemies in range.",
+                "dark": "Increases Mana Cost by 1 and ignores DEF when attacking Non-Hero enemies.",
+                "ut": {
+                    "name": "Enlightening Candlelight",
+                    "description": [
+                        "[Red Moon Blade] Gains immunity to CC for the duration of the skill. When the battle starts, increases DMG by 70% for 4 time.",
+                        "[Red Moon Blade] Gains immunity to CC for the duration of the skill. When the battle starts, increases DMG by 70% for 5 time.",
+                        "[Red Moon Blade] Gains immunity to CC for the duration of the skill. When the battle starts, increases DMG by 70% for 6 time.",
+                        "[Red Moon Blade] Gains immunity to CC for the duration of the skill. When the battle starts, increases DMG by 70% for 7 time.",
+                        "[Red Moon Blade] Gains immunity to CC for the duration of the skill. When the battle starts, increases DMG by 70% for 9 time.",
+                        "[Red Moon Blade] Gains immunity to CC for the duration of the skill. When the battle starts, increases DMG by 70% for 10 time."
+                    ],
+                    "story": "The candle known to have been on the table of the meeting hall where ancient warriors from different continents gathered to defeat supernatural beings. Blazing on this old candle is a blue exorcising flame. When the flame touches an evil being, it sucks the vitality out of the creature's body. This is the first material Seria uses whenever she refines her sword."
+                }
+            },
+            "s4": {
+                "name": "Cold-Blooded Witch",
+                "description": "ATK is increased by 38567. Upon a critical skill hit, own Crit DMG is increased by 5%. This effect can be stacked up to 30 times.",
+                "light": "Takes 0.7% reduced DMG per stack.",
+                "dark": "When the battle starts, increases DMG to Non-Hero enemies by 25% for 200 sec."
+            },
+            "t5": {
+                "light": "ATK, DEF, HP+15% / Crit DMG +20%",
+                "dark": "All of caster's attacks will be critical hits, but the caster becomes unable to block while taking 25% increased damage."
+            }
+        },
+        {
             "name": "Erze",
             "class": "Assassin",
             "hasProfile": false,
@@ -325,7 +398,7 @@
                 },
                 "linked": {
                     "name": "Alluring Ambush",
-                    "description": "Attacks target enemy 3 times, dealing a total of 251250 M.DMG. Deals extra 118241 M.DMG to Boss enemies and enemies inflicted by Charm."
+                    "description": "Attacks target enemy 3 times, dealing a total of 251250 M.DMG. Deals extra 118241 M.DMG ignoring the target's DEF to Boss enemies and enemies inflicted by Charm."
                 }
             },
             "s3": {
@@ -3743,7 +3816,7 @@
                 "name": "Lucky Child",
                 "description": "Upon a Crit Hit, ATK is increased by 8424 for 10 sec. Can be stacked up to 8 times max.",
                 "light": "Per each stack, DMG is increased by 4% to enemies other than heroes.",
-                "dark": "With 5 or more stacks, increases All Resistance by 20%."
+                "dark": "When there are 5 or more stacks, takes 20% reduced P.DMG and M.DMG."
             },
             "t5": {
                 "light": "ATK, DEF, HP+15% / Crit DMG +20%",
